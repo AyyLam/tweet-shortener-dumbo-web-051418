@@ -1,4 +1,5 @@
-dictionary_hash = {"hello" => "hi", 
+def dictionary
+  hash = {"hello" => "hi", 
   "to" => "2",
   "two" => "2", 
   "too" => "2", 
@@ -10,11 +11,11 @@ dictionary_hash = {"hello" => "hi",
   "and" => "&"}
   
 
-def word_substituter(tweet, dictionary_hash)
+def word_substituter(tweet)
   tweet = tweet.split
   tweet.collect do |word|
-    if dictionary_hash.keys.include?(word)
-      word = dictionary_hash[word]
+    if dictionary.keys.include?(word)
+      word = dictionary[word]
     end
   end
   tweet = tweet.join(" ")
